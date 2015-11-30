@@ -1,0 +1,27 @@
+<div class="todo">
+	<form (submit)="onSubmit($event);">
+		<h3>
+			Todo List: ({{ updateIncomplete() }} of {{ todos.length }})
+		</h3>
+		
+		<div class="todo__fields">
+			<input ng-control="label" [ng-model]="label" (ng-model-change)="label = $event" class="todo__input">
+			<button type="submit" class="todo__submit">
+				Add <i class="fa fa-check-circle"></i>
+			</button>
+		</div>
+		
+	</form>
+	
+	<ul class="todo__list">
+		<li *ng-for="#item of todos; #i = index"
+			[ng-class]="{ 'todo__list--complete': item.complete }">
+			
+			<input type="checkbox" [(ng-model)]="item.complete">
+			<p>{{ item.label }}</p>
+			<span (click)="deleteItem(i);">
+				<i class="fa fa-times-circle"></i>
+			</span>
+		</li>
+	</ul>
+</div>
