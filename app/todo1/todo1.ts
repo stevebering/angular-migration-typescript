@@ -1,16 +1,22 @@
-interface ITodoItem {
+export interface ITodoItem {
 	label: string,
 	complete: boolean
 }
 
-class TodoController {
+export interface ITodoController {
+	todos: Array<ITodoItem>;
+	label: string,
+	log: any;	
+}
+
+export class TodoController implements ITodoController {
 	label: string;
 	todos: Array<ITodoItem>;
 	log: any;
 	
 	inject = ['$http', '$log']
 	
-	constructor($http, $log) {
+	constructor($http: any, $log: any) {
 		this.log = $log;
 		this.label = '';
 				
@@ -57,7 +63,7 @@ class TodoController {
 	};
 }
 
-class TodoDirective {	
+export class TodoDirective {	
 	scope = {};
 	restrict = 'E';
 	replace = true;
@@ -66,7 +72,3 @@ class TodoDirective {
 	templateUrl = "partials/todo.html";
 	controller = TodoController;
 }
-
-angular
-	.module('Todo', [])
-	.directive('todo', () => new TodoDirective());

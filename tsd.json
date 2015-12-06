@@ -13,6 +13,12 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "98b4177d24ed2b5679d395c832ef337bd0b17c1c"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "e5a27ea95e47b95333784f1f0d590127b4e39a89"
+    },
+    "chai/chai.d.ts": {
+      "commit": "e5a27ea95e47b95333784f1f0d590127b4e39a89"
     }
   }
 }

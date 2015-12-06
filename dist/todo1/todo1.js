@@ -47,7 +47,7 @@ System.register([], function(exports_1) {
                 }
                 return TodoController;
             })();
-            exports_1("default", TodoController);
+            exports_1("TodoController", TodoController);
             TodoDirective = (function () {
                 function TodoDirective() {
                     this.scope = {};
@@ -60,9 +60,7 @@ System.register([], function(exports_1) {
                 }
                 return TodoDirective;
             })();
-            angular
-                .module('Todo', [])
-                .directive('todo', function () { return new TodoDirective(); });
+            exports_1("TodoDirective", TodoDirective);
         }
     }
 });

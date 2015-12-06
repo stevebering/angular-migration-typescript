@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "tsc test/todo1ControllerTest.ts --module commonjs",
+    "test": "mocha",
     "start": "npm install && gulp"
   },
   "author": "",
@@ -19,10 +20,12 @@
     "tsd": "^0.6.5"
   },
   "devDependencies": {
+    "chai": "^3.4.1",
     "connect": "^3.4.0",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.9.2",
+    "mocha": "^2.3.4",
     "open": "0.0.5",
     "serve-static": "^1.10.0"
   }
