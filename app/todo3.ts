@@ -1,9 +1,6 @@
-import {
-	Component,
-	bootstrap,
-	CORE_DIRECTIVES,
-	FORM_DIRECTIVES
-} from 'angular2/angular2';
+import { Component } from 'angular2/core';
+import { bootstrap } from 'angular2/platform/browser';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
 
 @Component({
 	selector: 'todo',

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "tsc test/todo1ControllerTest.ts --module commonjs",
+    "pretest": "tsc test/todo1ControllerTest.ts --module commonjs --target es5",
     "test": "mocha",
     "start": "npm install && gulp"
   },
@@ -12,12 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.8",
-    "angular2": "^2.0.0-alpha.46",
+    "angular2": "^2.0.0-beta.0",
     "bootstrap": "^3.3.6",
+    "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.13",
     "lodash": "^3.10.1",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.0",
     "systemjs": "^0.19.6",
-    "tsd": "^0.6.5"
+    "tsd": "^0.6.5",
+    "zone.js": "^0.5.10"
   },
   "devDependencies": {
     "chai": "^3.4.1",
@@ -27,6 +31,8 @@
     "gulp-typescript": "^2.9.2",
     "mocha": "^2.3.4",
     "open": "0.0.5",
-    "serve-static": "^1.10.0"
+    "serve-static": "^1.10.0",
+    "webpack": "^1.12.9",
+    "webpack-typescript": "^0.5.6"
   }
 }

@@ -6,18 +6,8 @@
 				
 		<script src="node_modules/es6-shim/es6-shim.min.js"></script>				
 		<script src="node_modules/systemjs/dist/system.js"></script>
-		<script src="node_modules/angular/angular.js"></script>
-
-		<script>
-			System.config({	
-				defaultJSExtensions: true
-			});
-		</script>	
-
-		<script>
-			System.import('/dist/todo1')
-				.catch(console.log.bind(console));	
-		</script>
+		<script src="dist/vendor1.bundle.js"></script>
+        <script src="dist/todo1.js"></script>
 
 	</head>
 	<body>

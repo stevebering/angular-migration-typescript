@@ -10,9 +10,19 @@ export interface ITodoController {
 }
 
 export class TodoController implements ITodoController {
-	label: string;
 	todos: Array<ITodoItem>;
 	log: any;
+	
+	private _label: string = '';
+	
+	get label(): string {
+		return this._label;
+	}
+	
+	set label(val: string) {
+        console.log('Setting value: ' + val);
+		this._label = val;
+	}
 	
 	inject = ['$http', '$log']
 	
@@ -63,12 +73,14 @@ export class TodoController implements ITodoController {
 	};
 }
 
-export class TodoDirective {	
-	scope = {};
-	restrict = 'E';
-	replace = true;
-	controllerAs = "vm";
-	bindToController = {};
-	templateUrl = "partials/todo.html";
-	controller = TodoController;
+export function TodoDirective() : ng.IDirective {
+    return {	
+	   scope: {},
+	   restrict: 'E',
+	   replace: true,
+	   controllerAs: "vm",
+	   bindToController: {},
+	   templateUrl: "partials/todo.html",
+	   controller: TodoController
+    };
 }

@@ -1,4 +1,4 @@
-System.register(['angular2/angular2'], function(exports_1) {
+System.register(['angular2/core', 'angular2/platform/browser', 'angular2/common'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
         switch (arguments.length) {
@@ -10,12 +10,18 @@ System.register(['angular2/angular2'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var angular2_1;
+    var core_1, browser_1, common_1;
     var Todo;
     return {
         setters:[
-            function (angular2_1_1) {
-                angular2_1 = angular2_1_1;
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (browser_1_1) {
+                browser_1 = browser_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             }],
         execute: function() {
             Todo = (function () {
@@ -55,12 +61,12 @@ System.register(['angular2/angular2'], function(exports_1) {
                     event.preventDefault();
                 };
                 Todo = __decorate([
-                    angular2_1.Component({
+                    core_1.Component({
                         selector: 'todo',
                         templateUrl: 'partials/todo2.html',
                         directives: [
-                            angular2_1.CORE_DIRECTIVES,
-                            angular2_1.FORM_DIRECTIVES
+                            common_1.CORE_DIRECTIVES,
+                            common_1.FORM_DIRECTIVES
                         ]
                     }), 
                     __metadata('design:paramtypes', [])
@@ -69,7 +75,7 @@ System.register(['angular2/angular2'], function(exports_1) {
             })();
             exports_1("Todo", Todo);
             ;
-            angular2_1.bootstrap(Todo);
+            browser_1.bootstrap(Todo);
         }
     }
 });

@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 
 var PATHS = {
-    src: 'app/**/*.ts'
+    src: 'app/*.ts',
+    js: 'app/**/*.js'
 };
 
 gulp.task('clean', function (done) {
@@ -20,7 +21,13 @@ gulp.task('ts2js', function () {
     return tsResult.js.pipe(gulp.dest('dist'));
 });
 
-gulp.task('play', ['ts2js'], function () {
+gulp.task('js-copy', function() {
+    return gulp
+        .src(PATHS.js) 
+        .pipe(gulp.dest('dist'));
+})
+
+gulp.task('play', ['js-copy', 'ts2js'], function () {
     var http = require('http');
     var connect = require('connect');
     var serveStatic = require('serve-static');
